@@ -1,0 +1,87 @@
+<MyWidget>:
+    orientation: 'vertical'
+
+    MDBoxLayout:
+        MDLabel:
+            text: 'IP:'
+
+        MDTextField:
+            id: ip
+
+    MDBoxLayout:
+        MDLabel:
+            text: 'Porta:'
+
+        MDTextField:
+            id: porta
+
+    MDRaisedButton:
+        text: 'Conectar'
+        on_release: root.connectar()
+
+    MDBoxLayout:
+        MDLabel:
+            text: 'Reg:'
+
+        MDTextField:
+            id: reg
+
+    MDBoxLayout:
+        MDLabel:
+            text: 'Valor da Leitura:'
+
+        MDLabel:
+            id: ler
+            text: ''
+
+    MDBoxLayout:
+        MDLabel:
+            text: 'Valor da Escrita:'
+
+        MDTextField:
+            id: escrever
+
+    MDBoxLayout:
+
+        MDRaisedButton:
+            text: 'Holding Register'
+            on_release: root.tipo = '1'
+
+        MDRaisedButton:
+            text: 'Coil'
+            on_release: root.tipo = '2'
+
+        MDRaisedButton:
+            text: 'Float'
+            on_release: root.tipo = '3'
+
+
+        MDRaisedButton:
+            text: 'Bit (Individual)'
+            on_release: root.tipo = '5'
+
+    MDBoxLayout:
+
+        MDLabel:
+            text: 'Posição do bit'
+
+        MDTextField:
+            id: posicao
+
+    MDBoxLayout:
+
+        MDRaisedButton:
+            text: 'Ler'
+            on_release: root.ler()
+
+        MDRaisedButton:
+            text: 'Escrever'
+            on_release: root.escrever()
+
+    MDBoxLayout:
+
+        MDLabel:
+            text: 'Leitura Contínua'
+
+        MDCheckbox:
+            id: lcon
